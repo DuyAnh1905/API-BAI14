@@ -1,0 +1,47 @@
+.form-create {
+  width: 96%;
+  background-color: #af5ab7;
+  padding: 20px 25px;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  min-height: 14vh;
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.form-create h3 {
+  color: #fbfbfbe3;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.form-create label {
+  color: #f7f7f7;
+  font-size: 25px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+
+.form-create input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+
+.form-create input[type="submit"] {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-create input[type="submit"]:hover {
+  background-color: #000000;
+  color: white; 
+}
