@@ -1,0 +1,17 @@
+.button-container {
+    text-align: center; /* Để căn chỉnh các nút theo trung tâm */
+  }
+  
+  .button-container button {
+    color: white;
+    background: rgb(69, 61, 61);
+    margin: 5px; /* Khoảng cách giữa các nút */
+    margin-top: 10px;
+    margin-left: auto; /* Để căn giữa theo chiều ngang */
+    margin-right: auto; /* Để căn giữa theo chiều ngang */
+  }
+  
+  .button-container button.active {
+    background: blue;
+  }
+  

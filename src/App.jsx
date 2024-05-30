@@ -1,41 +1,34 @@
 
 import BookCreate from './Components/BookCreate'
 import BookList from './Components/BookList'
-import { useState, useEffect } from 'react'
 import './App.css'
-import { fetchBook, createBook, deleteBook, updateBook } from './api'
+import { useEffect, useState } from 'react'
+import useBookContext from './hook/useBookContext'
 
 const App = () => {
-  const [books, setBooks] = useState([])
-
-  const handleCreate = async (term) => {
-    const book = await createBook(term)
-    if (book) setBooks([...books, book])
-  }
-  const handleDelete = async (id) => {
-    const book = await deleteBook(id)
-    setBooks(books.filter((item) => item.id !== book.id))
-  }
-  const handleUpdate = async (id, term) => {
-    const book = await updateBook(id, term)
-    setBooks(
-      books.map((item) => item.id === book.id ? book : item)
-    )
-  }
+  const { getAllBooks } = useBookContext()
+  const [currentpage, setCurrentpage] = useState(1)
   useEffect(async () => {
-    const tams = await fetchBook()
-    setBooks(tams)
+    await getAllBooks();
   }, [])
+  const setPageTitle = (page) => {
+    return `Reading Book ${page}`;
+  }
+  useEffect(() => {
+    document.title = setPageTitle(currentpage);
+  }, [currentpage]);
   return (
     <div className='wrapper'>
       <div className="container">
-
-        <h1>Reading Book</h1>
+         <div className="box">
+          
+        <h1>{setPageTitle(currentpage)}</h1>
+        </div>
         <div>
-          <BookList books={books} onDelete={handleDelete} onEdit={handleUpdate} onCancel={handleUpdate}/>
+          <BookList setPage={setCurrentpage}/>
         </div>
       </div>
-      <BookCreate onCreate={handleCreate} />
+      <BookCreate />
     </div>
   )
 }

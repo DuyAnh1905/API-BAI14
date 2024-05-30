@@ -1,18 +1,17 @@
 .item {
-  max-height: 500px;
-  background-image: radial-gradient(circle, rgb(22, 205, 233) 0%, rgb(140, 192, 241) 22%, rgb(255, 255, 255) 50%, rgb(222, 174, 238) 60%, rgb(248, 203, 114) 100%);
 
+  max-height: 500px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.5);
+  margin-left: 1px;
 }
 
 .image img {
   width: 100%;
   height: auto;
-  border-radius: 180px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 h2 {
@@ -43,7 +42,7 @@ button {
 
 button:hover {
   background-color: #000000;
-  color: white;
+  color: rgb(157, 12, 12);
 }
 
 button.delete {
